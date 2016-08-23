@@ -74,7 +74,7 @@ class Gcm extends AbstractApnsGcm
 
         try {
             // send a message
-            $result = $this->getClient()->send($message, $token, $this->retryTimes);
+            $result = $this->getClient()->retries($this->retryTimes)->send($message, $token);
             $this->success = $result->getSuccess();
             // HTTP code 200, but message sent with error
         } catch (\InvalidArgumentException $e) {
