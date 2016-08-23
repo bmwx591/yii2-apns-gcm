@@ -97,6 +97,7 @@ class Gcm extends AbstractApnsGcm
 
     public function sendMulti($tokens, $text, $payloadData = [], $args = [])
     {
+
     }
 
     public function __call($method, $params)
